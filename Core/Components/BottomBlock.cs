@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
-namespace Core
+namespace Infrastructure
 {
     public class BottomBlock : ComponentBase
     {

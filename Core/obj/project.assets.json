@@ -3237,9 +3237,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\niv\\Desktop\\ניב\\FirstProject_Niv\\Core\\Core.csproj",
-      "projectName": "Core",
-      "projectPath": "C:\\Users\\niv\\Desktop\\ניב\\FirstProject_Niv\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\niv\\Desktop\\ניב\\FirstProject_Niv\\Core\\Infrastructure.csproj",
+      "projectName": "Infrastructure",
+      "projectPath": "C:\\Users\\niv\\Desktop\\ניב\\FirstProject_Niv\\Core\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\niv\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\niv\\Desktop\\ניב\\FirstProject_Niv\\Core\\obj\\",
       "projectStyle": "PackageReference",

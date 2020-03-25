@@ -4,7 +4,7 @@ using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace Core
+namespace Infrastructure
 {
     public abstract class DriverUser
     {

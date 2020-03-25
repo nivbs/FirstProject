@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
 
-namespace Core
+namespace Infrastructure
 {
     public class Product : ComponentBase
     {
