@@ -5,19 +5,19 @@ using OpenQA.Selenium;
 
 namespace Infrastructure
 {
-    public class ItemButtonsContainer : ComponentBase
+    public class ProductButtonsContainer : ComponentBase
     {
         private Button AddToCartButton => new Button(Driver, ParentElement.FindElement(By.CssSelector(".ajax_add_to_cart_button")));
         private Button MoreButton => new Button(Driver, ParentElement.FindElement(By.CssSelector(".lnk_view")));
 
-        public ItemButtonsContainer(IWebDriver driver, IWebElement parentElement)
+        public ProductButtonsContainer(IWebDriver driver, IWebElement parentElement)
             : base(driver, parentElement)
         {
 
         }
 
-        public CatalogPage AddToCartClick()
-            => AddToCartButton.Click<CatalogPage>();
+        public ProductPane AddToCartClick()
+            => AddToCartButton.Click<ProductPane>(Driver.FindElement(By.CssSelector("#layer_cart")));
 
         //Change to ItemPage
         public BasePage MoreClick()

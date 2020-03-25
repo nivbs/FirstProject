@@ -11,29 +11,24 @@ using FluentAssertions;
 namespace FirstProject_Niv
 {
     [TestClass]
-    public class BaseUnitTest
+    public abstract class BaseUnitTest
     {
-        public HomePage HomePage { get; set; }
-        public ChromeDriver Driver { get; private set; }
+        protected HomePage HomePage { get; set; }
+        protected ChromeDriver Driver { get; private set; }
 
         [TestInitialize]
-        public void Intitalize()
+        public virtual void Initialize()
         {
             Driver = new ChromeDriver(@"C:\Users\niv\Desktop");
-            Driver.Url = @"http://automationpractice.com/index.php";
+            Driver.Navigate().GoToUrl(@"http://automationpractice.com/index.php");
+
             HomePage = new HomePage(Driver);
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-            Driver.Close();
-        }
-
-        [TestMethod]
-        public void Test1()
-        {
-            HomePage.Cart.MyShippingClick().CartTable.Should().NotBeNull();
+            Driver.Quit();
         }
     }
 }

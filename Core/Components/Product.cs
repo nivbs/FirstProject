@@ -7,16 +7,13 @@ namespace Infrastructure
 {
     public class Product : ComponentBase
     {
-        private Button RemoveButton => new Button(Driver, ParentElement.FindElement(By.CssSelector(".remove_link a")));
-        public ProductInfo ProductInfo => new ProductInfo(Driver, ParentElement.FindElement(By.CssSelector(".cart-info")));
-        
+        public TopBlock TopBlock => new TopBlock(Driver, ParentElement.FindElement(By.CssSelector(".left-block")));
+        public BottomBlock BottomBlock => new BottomBlock(Driver, ParentElement.FindElement(By.CssSelector(".right-block")));
+
         public Product(IWebDriver driver, IWebElement parentElement)
             : base(driver, parentElement)
         {
 
         }
-
-        public BasePage RemoveClick()
-            => RemoveButton.Click<BasePage>();
     }
 }
