@@ -14,7 +14,7 @@ namespace Core
         }
 
         public T Click<T>(IWebElement parentElement = null)
-             where T:BasePage
+             where T:DriverUser
         {
             ParentElement.Click();
 
