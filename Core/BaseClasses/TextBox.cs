@@ -28,5 +28,11 @@ namespace Infrastructure
             Clear();
             Fill(value);
         }
+
+        public string GetText()
+            => ParentElement.Text;
+
+        public string GetValue()
+            => ParentElement.GetCssValue("value");
     }
 }

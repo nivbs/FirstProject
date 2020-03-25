@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Infrastructure;
 using FluentAssertions;
-using System.Linq;
+using Extensions;
+
 
 namespace FirstProject_Niv
 {
@@ -27,18 +28,16 @@ namespace FirstProject_Niv
                 .Items.Last()
                 .BottomBlock.ItemButtonsContainer
                 .AddToCartClick()
-                .ContinueShoppingClickInHome()
-                .Cart
-                .MyShippingClick();
+                .ProceedToCheckoutClick();
         }
 
         [TestMethod]
         public void RemoveProductSuccess()
         {
-            string itemName = CartPage.CartTable.ProductRows.First().ProductDescription.ProductNameButton.GetText();
+            string itemName = CartPage.GetFirstProductRow().ProductDescription.ProductNameButton.GetText();
 
             CartPage
-                .CartTable.ProductRows.First()
+                .GetFirstProductRow()
                 .DeleteClick()
                 .CartTable.ProductRows
                 .ToList()
@@ -53,7 +52,17 @@ namespace FirstProject_Niv
         [TestMethod]
         public void AddQuanintyOfProductSuccess()
         {
+            double totalPrice = CartPage
+                .GetFirstProductRow().Quantity
+                .PlusClick()
+                .GetFirstProductRow()
+                .TotalPrice;
 
+            totalPrice
+                .Should()
+                .Be((double.Parse(CartPage.GetFirstProductRow()
+                .Quantity.QuantityTextBox.GetValue())
+                * CartPage.GetFirstProductRow().UnitPrice));
         }
     }
 }
