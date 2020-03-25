@@ -17,12 +17,10 @@ namespace Core
 
         }
 
-        //change to cartPage
-        public BasePage PlusClick()
-            => PlusButton.Click<BasePage>();
+        public CartPage PlusClick()
+            => PlusButton.Click<CartPage>();
 
-        //change to cartPage
-        public BasePage MinusClick()
-            => MinusButton.Click<BasePage>();
+        public CartPage MinusClick()
+            => MinusButton.Click<CartPage>();
     }
 }

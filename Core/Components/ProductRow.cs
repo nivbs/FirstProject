@@ -19,8 +19,7 @@ namespace Core
 
         }
 
-        //change to cartPage
-        public BasePage DeleteClick()
-            => DeleteButton.Click<BasePage>();
+        public CartPage DeleteClick()
+            => DeleteButton.Click<CartPage>();
     }
 }
