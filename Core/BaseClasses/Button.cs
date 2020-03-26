@@ -13,18 +13,18 @@ namespace Infrastructure
             
         }
 
-        public T Click<T>(IWebElement parentElement = null)
+        public T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
              where T:DriverUser
         {
             ParentElement.Click();
 
-            if (parentElement == null)
+            if (keyValuePair.Value == null && keyValuePair.Key == null)
             {
                 return (T)Activator.CreateInstance(typeof(T), Driver);
             }
             else
             {
-                return (T)Activator.CreateInstance(typeof(T), Driver, parentElement);
+                return (T)Activator.CreateInstance(typeof(T), Driver, keyValuePair.Key.FindElement(keyValuePair.Value));
             }
         }
 

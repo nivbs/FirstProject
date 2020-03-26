@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Infrastructure;
 using FluentAssertions;
 using Extensions;
+using OpenQA.Selenium;
 
 
 namespace FirstProject_Niv
@@ -35,34 +36,41 @@ namespace FirstProject_Niv
         public void RemoveProductSuccess()
         {
             string itemName = CartPage.GetFirstProductRow().ProductDescription.ProductNameButton.GetText();
+            int countOfProducts = CartPage.CartTable.ProductRows.Count();
 
-            CartPage
+            CartPage = CartPage
                 .GetFirstProductRow()
-                .DeleteClick()
-                .CartTable.ProductRows
+                .DeleteClick();
+            
+            CartPage
+                .CartTable
+                .ProductRows
                 .ToList()
-                .ForEach(productRow => 
+                .ForEach(productRow =>
                             productRow
                             .ProductDescription.ProductNameButton
                             .GetText()
                             .Should()
                             .NotBe(itemName));
+
+            CartPage
+                .CartTable
+                .ProductRows
+                .Count()
+                .Should()
+                .Be((countOfProducts - 1));
         }
 
         [TestMethod]
-        public void AddQuanintyOfProductSuccess()
+        public void AddQuantityOfProductSuccess()
         {
-            double totalPrice = CartPage
+            CartPage
                 .GetFirstProductRow().Quantity
                 .PlusClick()
                 .GetFirstProductRow()
-                .TotalPrice;
-
-            totalPrice
+                .TotalPrice
                 .Should()
-                .Be((double.Parse(CartPage.GetFirstProductRow()
-                .Quantity.QuantityTextBox.GetValue())
-                * CartPage.GetFirstProductRow().UnitPrice));
+                .Be(2.0 * CartPage.GetFirstProductRow().UnitPrice);
         }
     }
 }

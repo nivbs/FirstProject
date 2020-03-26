@@ -7,7 +7,7 @@ namespace Infrastructure
 {
     public class CartPage : BasePage
     {
-        public CartTable CartTable => new CartTable(Driver, Driver.FindElement(By.CssSelector(".row #center_column")));
+        public CartTable CartTable => new CartTable(Driver, Driver.FindElement(".row #center_column"));
 
         public CartPage(IWebDriver driver)
             : base(driver)
