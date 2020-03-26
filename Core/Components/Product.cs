@@ -7,7 +7,7 @@ namespace Infrastructure
 {
     public class Product : ComponentBase
     {
-        public TopBlock TopBlock => new TopBlock(Driver, ParentElement.FindElement(By.CssSelector(".left-block")));
+        public TopBlock TopBlock => new TopBlock(Driver, ParentElement.FindElement(".left-block"));
         public BottomBlock BottomBlock => new BottomBlock(Driver, ParentElement.FindElement(".right-block"));
 
         public Product(IWebDriver driver, IWebElement parentElement)

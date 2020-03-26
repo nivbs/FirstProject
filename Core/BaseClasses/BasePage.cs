@@ -5,8 +5,10 @@ using OpenQA.Selenium;
 
 namespace Infrastructure
 {
-    public class BasePage : DriverUser
+    public abstract class BasePage : DriverUser
     {
+        public Cart Cart => new Cart(Driver, Driver.FindElement(".shopping_cart"));
+
         public BasePage(IWebDriver driver)
             : base(driver)
         {
