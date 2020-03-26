@@ -7,8 +7,8 @@ namespace Infrastructure
 {
     public class ProductButtonsContainer : ComponentBase
     {
-        private Button AddToCartButton => new Button(Driver, ParentElement.FindElement(By.CssSelector(".ajax_add_to_cart_button")));
-        private Button MoreButton => new Button(Driver, ParentElement.FindElement(By.CssSelector(".lnk_view")));
+        private Button AddToCartButton => new Button(Driver, ParentElement.FindElement(".ajax_add_to_cart_button"));
+        private Button MoreButton => new Button(Driver, ParentElement.FindElement(".lnk_view"));
 
         public ProductButtonsContainer(IWebDriver driver, IWebElement parentElement)
             : base(driver, parentElement)

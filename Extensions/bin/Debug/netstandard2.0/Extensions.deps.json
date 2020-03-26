@@ -10,7 +10,8 @@
       "Extensions/1.0.0": {
         "dependencies": {
           "Infrastructure": "1.0.0",
-          "NETStandard.Library": "2.0.3"
+          "NETStandard.Library": "2.0.3",
+          "Selenium.WebDriver": "3.141.0"
         },
         "runtime": {
           "Extensions.dll": {}

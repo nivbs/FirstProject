@@ -21,11 +21,11 @@ namespace FirstProject_Niv
         {
             base.Initialize();
 
-            CartPage = HomePage.Items.First()
+            CartPage = HomePage.Products.First()
                 .BottomBlock.ItemButtonsContainer
                 .AddToCartClick()
                 .ContinueShoppingClickInHome()
-                .Items.Last()
+                .Products.Last()
                 .BottomBlock.ItemButtonsContainer
                 .AddToCartClick()
                 .ProceedToCheckoutClick();
