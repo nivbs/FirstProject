@@ -21,7 +21,6 @@ namespace FirstProject_Niv
         {
             Driver = new ChromeDriver(@"C:\Users\niv\Desktop");
             Driver.Navigate().GoToUrl(@"http://automationpractice.com/index.php");
-            //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
             HomePage = new HomePage(Driver);
         }

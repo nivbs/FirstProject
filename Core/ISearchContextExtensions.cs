@@ -10,7 +10,7 @@ namespace Infrastructure
     public static class ISearchContextExtensions
     {
         public static IWebElement FindElement(this ISearchContext searchContext, 
-            string cssSelector, int seconds = 5)
+            string cssSelector, int seconds = 20)
         {
             if (seconds <= 0)
             {
@@ -36,7 +36,7 @@ namespace Infrastructure
         }
 
         public static IEnumerable<IWebElement> FindElements(this ISearchContext searchContext,
-            string cssSelector, int seconds = 5)
+            string cssSelector, int seconds = 20)
         {
             if (seconds <= 0)
             {

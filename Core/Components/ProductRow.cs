@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Infrastructure
 {
@@ -20,6 +21,22 @@ namespace Infrastructure
         }
 
         public CartPage DeleteClick()
-            => DeleteButton.Click<CartPage>();
+        {
+            DefaultWait<IWebElement> defaultWait = new DefaultWait<IWebElement>(ParentElement);
+            defaultWait.Timeout = TimeSpan.FromSeconds(20);
+            defaultWait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
+            return defaultWait.Until<CartPage>(parentElement =>
+            {
+                var cartPage = DeleteButton.Click<CartPage>();
+                if(!parentElement.Displayed)
+                {
+                    return cartPage;
+                }
+                else
+                {
+                    return null;
+                }
+            });  
+        }
     }
 }

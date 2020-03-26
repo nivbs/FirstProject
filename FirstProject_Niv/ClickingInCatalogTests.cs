@@ -26,5 +26,14 @@ namespace FirstProject_Niv
                 .Should()
                 .BeTrue();
         }
+
+        [TestMethod]
+        public void ClickOnColorOfProductSuccess()
+        {
+            string color = WomenCatalogPage.Products.First().BottomBlock.ColorsButtons.First().GetText();
+
+            WomenCatalogPage.Products.First()
+                .BottomBlock.ColorsButtons.First().Click<ProductPage>();
+        }
     }
 }
