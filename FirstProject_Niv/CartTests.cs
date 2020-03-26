@@ -72,5 +72,39 @@ namespace FirstProject_Niv
                 .Should()
                 .Be(2.0 * CartPage.GetFirstProductRow().UnitPrice);
         }
+
+        [TestMethod]
+        public void ChangeToDecimalQuantityFail()
+        {
+            double totalFirstProductPrice = CartPage.GetFirstProductRow().TotalPrice;
+            
+            CartPage
+                .GetFirstProductRow().Quantity
+                .QuantityTextBox
+                .FillNewValue("1.5");
+
+            CartPage
+                .GetFirstProductRow()
+                .TotalPrice
+                .Should()
+                .Be(totalFirstProductPrice);
+        }
+
+        [TestMethod]
+        public void ClickPlusOnDecimalQuantitySuccess()
+        {
+            CartPage
+                .GetFirstProductRow().Quantity
+                .QuantityTextBox
+                .FillNewValue("1.5");
+
+            CartPage
+                .GetFirstProductRow().Quantity
+                .PlusClick()
+                .GetFirstProductRow()
+                .TotalPrice
+                .Should()
+                .Be(2.0 * CartPage.GetFirstProductRow().UnitPrice);
+        }
     }
 }

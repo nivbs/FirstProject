@@ -21,7 +21,7 @@ namespace Infrastructure
                 DefaultWait<ISearchContext> defaultWait = new DefaultWait<ISearchContext>(searchContext);
                 defaultWait.Timeout = TimeSpan.FromSeconds(seconds);
                 defaultWait.IgnoreExceptionTypes(typeof(ElementNotInteractableException),
-                    typeof(StaleElementReferenceException));
+                    typeof(StaleElementReferenceException), typeof(NoSuchElementException));
                 return defaultWait.Until<IWebElement>(sc =>
                     {
                         var element = sc.FindElement(By.CssSelector(cssSelector));
