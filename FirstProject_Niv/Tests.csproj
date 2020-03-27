@@ -149,6 +149,7 @@
     <Compile Include="CartWithTwoProductsTests.cs" />
     <Compile Include="BaseUnitTest.cs" />
     <Compile Include="ClickingInCatalogTests.cs" />
+    <Compile Include="FilterInCatalogTests.cs" />
     <Compile Include="PointerInCatalogTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,6 +157,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Assertions\Assertions.csproj">
+      <Project>{5eaf1bee-3e96-4737-aabe-0a1529c86ae7}</Project>
+      <Name>Assertions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Infrastructure.csproj">
       <Project>{f12b282e-d989-48de-a0fb-436965c6e7c8}</Project>
       <Name>Infrastructure</Name>

@@ -7,6 +7,7 @@ using Extensions;
 using FluentAssertions;
 using Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Assertions;
 
 namespace FirstProject_Niv
 {
@@ -28,9 +29,8 @@ namespace FirstProject_Niv
                 .GetFirstProductRow().Quantity
                 .PlusClick()
                 .GetFirstProductRow()
-                .TotalPrice
                 .Should()
-                .Be(2.0 * CartPage.GetFirstProductRow().UnitPrice);
+                .TotalPriceIsTrue();
         }
 
         [TestMethod]
@@ -62,9 +62,8 @@ namespace FirstProject_Niv
                 .GetFirstProductRow().Quantity
                 .PlusClick()
                 .GetFirstProductRow()
-                .TotalPrice
                 .Should()
-                .Be(2.0 * CartPage.GetFirstProductRow().UnitPrice);
+                .TotalPriceIsTrue();
         }
 
         [TestMethod]
@@ -79,9 +78,8 @@ namespace FirstProject_Niv
                 .GetFirstProductRow().Quantity
                 .MinusClick()
                 .GetFirstProductRow()
-                .TotalPrice
                 .Should()
-                .Be(2.0 * CartPage.GetFirstProductRow().UnitPrice);
+                .TotalPriceIsTrue();
         }
     }
 }

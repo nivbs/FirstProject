@@ -31,6 +31,10 @@ namespace Infrastructure
         public CatalogPage SizeClick(string sizeName)
             => SizeButtons.Where(sizeButton => sizeButton.GetText().Contains(sizeName))
                 .First().Click<CatalogPage>();
+        public IEnumerable<string> ColorNames()
+            => ColorButtons.Select(colorButton => colorButton.GetText());
+        public CatalogPage FirstColorClick()
+            => ColorButtons.First().Click<CatalogPage>();
         public CatalogPage ColorClick(string colorName)
                     => ColorButtons.Where(colorButton => colorButton.GetText().Contains(colorName))
                         .First().Click<CatalogPage>();

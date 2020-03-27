@@ -9,6 +9,7 @@ using Infrastructure.Utils;
 using Extensions;
 using FluentAssertions;
 using System.Threading;
+using Assertions;
 
 namespace FirstProject_Niv
 {
@@ -29,7 +30,7 @@ namespace FirstProject_Niv
         [TestMethod]
         public void RemoveProductSuccess()
         {
-            string itemName = CartPage.GetFirstProductRow().ProductDescription.ProductNameButton.GetText();
+            string productName = CartPage.GetFirstProductRow().ProductDescription.ProductNameButton.GetText();
             int countOfProducts = CartPage.CartTable.ProductRows.Count();
 
             CartPage = CartPage
@@ -37,22 +38,11 @@ namespace FirstProject_Niv
                 .DeleteClick();
 
             CartPage
-                .CartTable
-                .ProductRows
-                .ToList()
-                .ForEach(productRow =>
-                            productRow
-                            .ProductDescription.ProductNameButton
-                            .GetText()
-                            .Should()
-                            .NotBe(itemName));
-
-            CartPage
-                .CartTable
-                .ProductRows
-                .Count()
                 .Should()
-                .Be((countOfProducts - 1));
+                .ProductNotExistInCart(productName)
+                .And
+                .Should()
+                .QuantityIsEquals(countOfProducts - 1);
         }
     }
 }
