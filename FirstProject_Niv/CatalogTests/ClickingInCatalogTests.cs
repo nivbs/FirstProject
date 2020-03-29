@@ -28,6 +28,12 @@ namespace FirstProject_Niv
         }
 
         [TestMethod]
+        public void TestGetXPath()
+        {
+            string xPath = WomenCatalogPage.Products.First().BottomBlock.GetMyXPath();
+        }
+
+        [TestMethod]
         public void ClickOnColorOfProductSuccess()
         {
             ColorButton firstColorButton = WomenCatalogPage.Products.First()

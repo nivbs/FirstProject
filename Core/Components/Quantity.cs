@@ -18,7 +18,7 @@ namespace Infrastructure
         }
 
         public CartPage PlusClick()
-            => Utils.FindElement.WaitUntilClickChangeId<CartPage>(PlusButton);
+            => PlusButton.Click<CartPage>(new KeyValuePair<ISearchContext, string>(), ".cart_quantity_up");
 
         public CartPage MinusClick()
             => Utils.FindElement.WaitUntilClickChangeId<CartPage>(MinusButton);

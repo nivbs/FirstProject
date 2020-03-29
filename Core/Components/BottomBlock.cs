@@ -17,5 +17,8 @@ namespace Infrastructure
         {
 
         }
+
+        public string GetMyXPath()
+            => GetXPath(ParentElement, "");
     }
 }

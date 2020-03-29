@@ -1,8 +1,11 @@
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\Tests.csprojAssemblyReference.cache
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\Tests.csproj.CoreCompileInputs.cache
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\FirstProject_Niv.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\FirstProject_Niv.pdb
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Assertions.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Extensions.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\FluentAssertions.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\IKVM.AWT.WinForms.dll
@@ -37,6 +40,7 @@ C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Infrastr
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\WebDriver.dll
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Assertions.pdb
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Infrastructure.pdb
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Extensions.pdb
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\FluentAssertions.pdb
@@ -44,10 +48,6 @@ C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\FluentAs
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\WebDriver.xml
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\Tests.csprojAssemblyReference.cache
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\Tests.csproj.CoreCompileInputs.cache
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\Tests.csproj.CopyComplete
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\FirstProject_Niv.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\FirstProject_Niv.pdb
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Assertions.dll
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Assertions.pdb

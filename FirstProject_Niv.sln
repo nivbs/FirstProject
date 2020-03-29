@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Core\Infr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "Extensions\Extensions.csproj", "{F708A9A8-30EF-42B2-82B6-4BABDE5D0973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assertions", "Assertions\Assertions.csproj", "{5EAF1BEE-3E96-4737-AABE-0A1529C86AE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assertions", "Assertions\Assertions.csproj", "{5EAF1BEE-3E96-4737-AABE-0A1529C86AE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

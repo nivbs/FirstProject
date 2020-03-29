@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Infrastructure
 {
@@ -13,10 +14,17 @@ namespace Infrastructure
             
         }
 
-        public T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
+        public T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>(),
+             string cssSelectorFromDriver = "")
              where T:DriverUser
         {
             ParentElement.Click();
+            //if (cssSelectorFromDriver != "")
+            //{
+            //    WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
+            //    wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            //    wait.Until<bool>(ExpectedConditions.InvisibilityOfElementLocated(By.CssSelector(cssSelectorFromDriver)));
+            //}
 
             if (keyValuePair.Value == null && keyValuePair.Key == null)
             {

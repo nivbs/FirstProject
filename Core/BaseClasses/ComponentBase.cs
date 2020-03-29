@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
@@ -25,5 +26,28 @@ namespace Infrastructure
 
         public bool IsDisplayed()
             => ParentElement.Displayed;
+
+        public string GetXPath(IWebElement element, string currentXPath)
+        {
+            string childTag = element.TagName;
+            if(childTag.Equals("html"))
+            {
+                return $"/html[1]{currentXPath}";
+            }
+            IWebElement parentElement = element.FindElement(By.XPath(childTag));
+            List<IWebElement> childrenElement = parentElement.FindElements(By.XPath("*")).ToList();
+            int count = 0;
+            foreach(IWebElement childElement in childrenElement)
+            {
+                if(childTag.Equals(childElement.TagName))
+                {
+                    count++;
+                }
+                if (childrenElement.Count == 1)
+                    return GetXPath(parentElement, $"/{childTag}[{count}]{currentXPath}");
+            }
+
+            return null;
+        }
     }
 }
