@@ -30,5 +30,8 @@ namespace Infrastructure
 
         public string GetText()
             => ParentElement.Text;
+
+        public string GetLink()
+            => GetValueByAttribute("href");
     }
 }

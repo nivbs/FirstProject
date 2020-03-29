@@ -10,7 +10,7 @@ namespace Infrastructure
     {
         public string ProductName => ParentElement.FindElement(".product-name").Text;
         public ProductButtonsContainer ItemButtonsContainer => new ProductButtonsContainer(Driver, ParentElement.FindElement(".button-container"));
-        public IEnumerable<Button> ColorsButtons => ParentElement.FindElements(".color_pick").Select(element => new Button(Driver, element));
+        public IEnumerable<ColorButton> ColorsButtons => ParentElement.FindElements(".color_pick").Select(element => new ColorButton(Driver, element));
 
         public BottomBlock(IWebDriver driver, IWebElement parentElement)
             : base(driver, parentElement)

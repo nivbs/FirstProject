@@ -18,9 +18,9 @@ namespace Infrastructure
         }
 
         public CartPage PlusClick()
-            => PlusButton.Click<CartPage>();
+            => Utils.FindElement.WaitUntilClickChangeId<CartPage>(PlusButton);
 
         public CartPage MinusClick()
-            => MinusButton.Click<CartPage>();
+            => Utils.FindElement.WaitUntilClickChangeId<CartPage>(MinusButton);
     }
 }

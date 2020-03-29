@@ -22,21 +22,33 @@ namespace Infrastructure
 
         public CartPage DeleteClick()
         {
-            DefaultWait<IWebElement> defaultWait = new DefaultWait<IWebElement>(ParentElement);
-            defaultWait.Timeout = TimeSpan.FromSeconds(20);
-            defaultWait.IgnoreExceptionTypes(typeof(StaleElementReferenceException));
-            return defaultWait.Until<CartPage>(parentElement =>
-            {
-                var cartPage = DeleteButton.Click<CartPage>();
-                if(!parentElement.Displayed)
-                {
-                    return cartPage;
-                }
-                else
-                {
-                    return null;
-                }
-            });  
+            return (CartPage)Utils.FindElement.WaitUntilNotExist(ParentElement, DeleteButton.Click<CartPage>());
+            //DefaultWait<IWebElement> defaultWait = new DefaultWait<IWebElement>(ParentElement);
+            //defaultWait.Timeout = TimeSpan.FromSeconds(20);
+            //var cartPage = DeleteButton.Click<CartPage>();
+            //return defaultWait.Until<CartPage>(parentElement =>
+            //{
+            //    try
+            //    {
+
+            //        if(parentElement.Enabled)
+            //        {
+            //            return null;
+            //        }
+            //        else
+            //        {
+            //            return cartPage;
+            //        }
+            //    }
+            //    catch(StaleElementReferenceException)
+            //    {
+            //        return cartPage;
+            //    }
+            //    catch(NoSuchElementException)
+            //    {
+            //        return cartPage;
+            //    }
+            //});
         }
     }
 }

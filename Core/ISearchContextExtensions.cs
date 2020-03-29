@@ -25,7 +25,7 @@ namespace Infrastructure
                 return defaultWait.Until<IWebElement>(sc =>
                     {
                         var element = sc.FindElement(By.CssSelector(cssSelector));
-                        if(element.Displayed && element.Enabled)
+                        if(element.Enabled && element.Displayed)
                         {
                             return element;
                         }
@@ -51,7 +51,7 @@ namespace Infrastructure
                 return defaultWait.Until<IEnumerable<IWebElement>>(sc =>
                     {
                         var elements = sc.FindElements(By.CssSelector(cssSelector));
-                        if (elements.All(element => element.Displayed && element.Enabled))
+                        if (elements.All(element => element.Enabled))
                         {
                             return elements;
                         }

@@ -7,3 +7,9 @@ C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.AssemblyInfo.cs
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.pdb
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\FluentAssertions.dll
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Infrastructure.dll
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Infrastructure.pdb
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\FluentAssertions.pdb
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\FluentAssertions.xml
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.csproj.CopyComplete

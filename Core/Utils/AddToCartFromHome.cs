@@ -16,5 +16,17 @@ namespace Infrastructure.Utils
             => homePage.Products.Last()
                 .BottomBlock.ItemButtonsContainer
                 .AddToCartClick();
+
+        public static ProductPane ProductByIndex(HomePage homePage, int index)
+        {
+            if (index >= 0 && index < homePage.Products.Count())
+            {
+                return homePage.Products.ToList()[index]
+                      .BottomBlock.ItemButtonsContainer
+                      .AddToCartClick();
+            }
+
+            return FirstProduct(homePage);
+        }
     }
 }

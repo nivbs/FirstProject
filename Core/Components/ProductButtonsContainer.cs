@@ -19,8 +19,7 @@ namespace Infrastructure
         public ProductPane AddToCartClick()
             => AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver,"#layer_cart"));
 
-        //Change to ItemPage
-        public BasePage MoreClick()
-            => MoreButton.Click<BasePage>();
+        public ProductPage MoreClick()
+            => MoreButton.Click<ProductPage>();
     }
 }

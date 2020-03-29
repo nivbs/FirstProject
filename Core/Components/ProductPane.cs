@@ -24,7 +24,7 @@ namespace Infrastructure
             => ContinueShoppingButton.Click<HomePage>();
 
         public CartPage ProceedToCheckoutClick()
-            => ProceedToCheckoutButton.Click<CartPage>();
+            => (CartPage)Utils.FindElement.WaitUntilNotExist(ParentElement, ProceedToCheckoutButton.Click<CartPage>());
 
         public CatalogPage ExitClickInCatalog()
             => ExitButton.Click<CatalogPage>();

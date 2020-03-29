@@ -30,10 +30,17 @@ namespace FirstProject_Niv
         [TestMethod]
         public void ClickOnColorOfProductSuccess()
         {
-            string color = WomenCatalogPage.Products.First().BottomBlock.ColorsButtons.First().GetText();
+            ColorButton firstColorButton = WomenCatalogPage.Products.First()
+                                            .BottomBlock
+                                            .ColorsButtons.ToList()[0];
 
-            WomenCatalogPage.Products.First()
-                .BottomBlock.ColorsButtons.First().Click<ProductPage>();
+            firstColorButton
+                .GetColorStyle()
+                .Should()
+                .Be(firstColorButton
+                .ColorClick()
+                .ProductInfo
+                .GetSelectedColorStyle());
         }
     }
 }

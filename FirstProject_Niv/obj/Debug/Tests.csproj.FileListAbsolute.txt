@@ -49,3 +49,5 @@ C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\Tests.cs
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\Tests.csproj.CopyComplete
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\FirstProject_Niv.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\obj\Debug\FirstProject_Niv.pdb
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Assertions.dll
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\FirstProject_Niv\bin\Debug\Assertions.pdb

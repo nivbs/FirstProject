@@ -143,14 +143,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseCartTest.cs" />
-    <Compile Include="BaseCatalogTests.cs" />
-    <Compile Include="CartWithOneProductTests.cs" />
-    <Compile Include="CartWithTwoProductsTests.cs" />
-    <Compile Include="BaseUnitTest.cs" />
-    <Compile Include="ClickingInCatalogTests.cs" />
-    <Compile Include="FilterInCatalogTests.cs" />
-    <Compile Include="PointerInCatalogTests.cs" />
+    <Compile Include="BaseTests\BaseCartTest.cs" />
+    <Compile Include="BaseTests\BaseCatalogTests.cs" />
+    <Compile Include="CartTests\CartWithOneProductTests.cs" />
+    <Compile Include="CartTests\CartWithTwoProductsTests.cs" />
+    <Compile Include="BaseTests\BaseUnitTest.cs" />
+    <Compile Include="CatalogTests\ClickingInCatalogTests.cs" />
+    <Compile Include="CatalogTests\FilterInCatalogTests.cs" />
+    <Compile Include="CatalogTests\PointerInCatalogTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

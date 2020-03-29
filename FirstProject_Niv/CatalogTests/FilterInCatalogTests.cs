@@ -14,13 +14,13 @@ namespace FirstProject_Niv
         [TestMethod]
         public void FilterByColorSuccess()
         {
-            string color = WomenCatalogPage.FilterRow.ColorNames().First();
+            string color = WomenCatalogPage.FilterRow.ColorStyles().First();
 
             WomenCatalogPage.FilterRow
                 .ColorClick(color)
                 .Products
                 .All(product => product.BottomBlock.ColorsButtons
-                .Any(colorButton => colorButton.GetText() == color))
+                .Any(colorButton => colorButton.GetColorStyle() == color))
                 .Should()
                 .BeTrue();
         }

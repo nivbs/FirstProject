@@ -18,13 +18,12 @@ namespace Infrastructure
         }
 
         public CatalogPage WomenClick()
-            => WomenButton.Click<CatalogPage>();
+            => Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(WomenButton);
 
         public CatalogPage DressesClick()
-            => DressesButton.Click<CatalogPage>();
+            => Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(DressesButton);
 
         public CatalogPage TShirtsClick()
-            => TShirtsButton.Click<CatalogPage>();
-
+            => Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(TShirtsButton);
     }
 }

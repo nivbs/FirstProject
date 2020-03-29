@@ -14,5 +14,16 @@ namespace Infrastructure
         {
             ParentElement = parentElement;
         }
+
+        public string GetValueByAttribute(string property)
+            => ParentElement.GetAttribute(property);
+
+        public override string ToString()
+        {
+            return ParentElement.ToString();
+        }
+
+        public bool IsDisplayed()
+            => ParentElement.Displayed;
     }
 }
