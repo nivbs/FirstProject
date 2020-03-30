@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
@@ -16,7 +17,7 @@ namespace Infrastructure
 
         }
 
-        public BasePage RemoveClick()
-            => RemoveButton.Click<BasePage>();
+        public CartPage RemoveClick()
+            => RemoveButton.ClickUntilElementExist<CartPage>(CssSelectorsInDriver.CartPage.First().Value);
     }
 }

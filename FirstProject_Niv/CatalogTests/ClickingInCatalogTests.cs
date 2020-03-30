@@ -21,9 +21,9 @@ namespace FirstProject_Niv
             WomenCatalogPage.Products.First()
                 .BottomBlock.ItemButtonsContainer
                 .AddToCartClick()
-                .ProceedToCheckoutClick()
-                .CartTable.ProductRows
-                .Any(product => product.ProductDescription.ProductNameButton.GetText() == firstProductName)
+                .ContinueShoppingClickInCatalog()
+                .Cart.Products
+                .Any(product => product.ProductInfo.GetProductName() == firstProductName)
                 .Should()
                 .BeTrue();
         }

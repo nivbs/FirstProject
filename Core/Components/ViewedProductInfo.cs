@@ -16,10 +16,10 @@ namespace Infrastructure
         }
 
         public ProductPage ProductImageClick()
-            => ProductImageButton.Click<ProductPage>();
+            => ProductImageButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
 
         public ProductPage ProductNameClick()
-            => ProductNameButton.Click<ProductPage>();
+            => ProductNameButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
 
         public string GetProductName()
             => ProductNameButton.GetText();

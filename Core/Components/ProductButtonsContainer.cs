@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
@@ -19,13 +20,15 @@ namespace Infrastructure
         public ProductPane AddToCartClick()
         //=> Utils.FindElement.WaitUntilClickRefreshed<ProductPane>(AddToCartButton, new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
         // => AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver,"#layer_cart"));
-        {
-            var productPane = AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
-            Driver.FindElement("#layer_cart");
+        //{
+        //    var productPane = AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
+        //    Driver.FindElement("#layer_cart");
 
-            return productPane;
-        }
+        //    return productPane;
+        //}
+        => AddToCartButton.ClickUntilElementExist<ProductPane>(CssSelectorsInDriver.ProductPane, new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
+        
         public ProductPage MoreClick()
-            => MoreButton.Click<ProductPage>();
+            => MoreButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
     }
 }

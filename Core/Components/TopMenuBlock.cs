@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
@@ -18,12 +19,12 @@ namespace Infrastructure
         }
 
         public CatalogPage WomenClick()
-            => Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(WomenButton);
+            => WomenButton.ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
 
         public CatalogPage DressesClick()
-            => Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(DressesButton);
+            => DressesButton.ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
 
         public CatalogPage TShirtsClick()
-            => Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(TShirtsButton);
+            => TShirtsButton.ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
     }
 }

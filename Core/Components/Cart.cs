@@ -20,10 +20,10 @@ namespace Infrastructure
 
         }
 
-        public BasePage CheckOutClick()
-            => CheckOutButton.Click<BasePage>();
+        public CartPage CheckOutClick()
+            => CheckOutButton.ClickUntilElementExist<CartPage>("");
 
         public CartPage MyShippingClick()
-            => MyShippingButton.Click<CartPage>();
+            => MyShippingButton.ClickUntilElementExist<CartPage>("");
     }
 }

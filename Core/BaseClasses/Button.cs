@@ -53,6 +53,35 @@ namespace Infrastructure
             return driverUser;
         }
 
+        public T ClickUntilElementIsNotExist<T>(ComponentBase component, KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
+             where T : DriverUser
+        {
+            T driverUser = Click<T>(keyValuePair);
+            DefaultWait<ComponentBase> defaultWait = new DefaultWait<ComponentBase>(component);
+            defaultWait.Timeout = TimeSpan.FromSeconds(20);
+
+            return defaultWait.Until<T>(myComponent =>
+            {
+                try
+                {
+                    if (myComponent.IsEnabled())
+                    {
+                        return null;
+                    }
+
+                    return driverUser;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    return driverUser;
+                }
+                catch (NoSuchElementException)
+                {
+                    return driverUser;
+                }
+            });
+        }
+
         public string GetText()
             => ParentElement.Text;
 

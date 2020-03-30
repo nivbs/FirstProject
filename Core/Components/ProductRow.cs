@@ -21,9 +21,9 @@ namespace Infrastructure
         }
 
         public CartPage DeleteClick()
-        {
+            => DeleteButton.ClickUntilElementIsNotExist<CartPage>(new ProductRow(Driver, ParentElement));
             //return DeleteButton.Click();
-            return (CartPage)Utils.FindElement.WaitUntilNotExist(ParentElement, DeleteButton.Click<CartPage>());
+            //return (CartPage)Utils.FindElement.WaitUntilNotExist(ParentElement, DeleteButton.Click<CartPage>());
             //DefaultWait<IWebElement> defaultWait = new DefaultWait<IWebElement>(ParentElement);
             //defaultWait.Timeout = TimeSpan.FromSeconds(20);
             //var cartPage = DeleteButton.Click<CartPage>();
@@ -50,6 +50,6 @@ namespace Infrastructure
             //        return cartPage;
             //    }
             //});
-        }
+        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
@@ -20,26 +21,20 @@ namespace Infrastructure
         public CatalogPage ContinueShoppingClickInCatalog()
         //=> Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(ContinueShoppingButton);
         //=> ContinueShoppingButton.Click<CatalogPage>();
-        {
-            var  ContinueShoppingButton.Click<CatalogPage>();
-        }
+        => ContinueShoppingButton.ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
+        
 
         public HomePage ContinueShoppingClickInHome()
-            => ContinueShoppingButton.Click<HomePage>();
+            => ContinueShoppingButton.ClickUntilElementExist<HomePage>(CssSelectorsInDriver.HomePage.First().Value);
 
         public CartPage ProceedToCheckoutClick()
         // => (CartPage)Utils.FindElement.WaitUntilNotExist(ParentElement, ProceedToCheckoutButton.Click<CartPage>());
-        {
-            var cartPage = ProceedToCheckoutButton.Click<CartPage>();
-            var cartTable = cartPage.CartTable;
-
-            return cartPage;
-        }
+        => ProceedToCheckoutButton.ClickUntilElementExist<CartPage>(CssSelectorsInDriver.CartPage.First().Value);
 
         public CatalogPage ExitClickInCatalog()
-            => ExitButton.Click<CatalogPage>();
+            => ExitButton.ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
 
         public HomePage ExitClickInHome()
-            => ExitButton.Click<HomePage>();
+            => ExitButton.ClickUntilElementExist<HomePage>(CssSelectorsInDriver.HomePage.First().Value);
     }
 }

@@ -17,7 +17,7 @@ namespace Infrastructure
         }
 
         public ProductPage ColorClick()
-            => Button.Click<ProductPage>();
+            => Button.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
 
         public string GetColorStyle()
             => Button.GetValueByAttribute("style");

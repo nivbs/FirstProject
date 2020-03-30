@@ -43,7 +43,7 @@ namespace Infrastructure.Utils
             defaultWait.Timeout = TimeSpan.FromSeconds(20);
             defaultWait.IgnoreExceptionTypes(typeof(StaleElementReferenceException),
                 typeof(NoSuchElementException), typeof(ElementNotInteractableException));
-            T driverUser = button.Click<T>(keyValuePair);
+            T driverUser = null; //button.Click<T>(keyValuePair);
             
             return defaultWait.Until<T>(myButton =>
             {
@@ -62,7 +62,7 @@ namespace Infrastructure.Utils
             where T : DriverUser
         {
             string buttonToString = button.ToString();
-            T driverUser = button.Click<T>(keyValuePair);
+            T driverUser = null;// button.Click<T>(keyValuePair);
             DefaultWait<Button> defaultWait = new DefaultWait<Button>(button);
             defaultWait.Timeout = TimeSpan.FromSeconds(20);
             //defaultWait.Until<IWebElement>(ExpectedConditions

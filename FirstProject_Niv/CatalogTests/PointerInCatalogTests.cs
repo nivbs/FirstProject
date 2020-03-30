@@ -20,10 +20,15 @@ namespace FirstProject_Niv
         [TestMethod]
         public void PointerOnProductSuccess()
         {
+            bool isDisplayed = WomenCatalogPage.Products.First()
+                .BottomBlock
+                .ItemButtonsContainer
+                .IsDisplayed();
+
             var point = WomenCatalogPage.Products.First().GetLocation();
             Actions action = new Actions(Driver);
-            action.MoveByOffset(point.X, point.Y).Perform();
-
+            //action.MoveByOffset(point.X, point.Y).Build().Perform();
+            action.MoveToElement(Driver.FindElement(By.CssSelector(CssSelectorsInDriver.Product)), 5,5).Perform();
             WomenCatalogPage.Products.First()
                 .BottomBlock
                 .ItemButtonsContainer

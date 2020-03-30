@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
@@ -20,7 +21,7 @@ namespace Infrastructure
         public string GetProductName()
             => ProductNameButton.GetValueByAttribute("title");
 
-        public BasePage ProductNameClick()
-            => ProductNameButton.Click<BasePage>();
+        public ProductPage ProductNameClick()
+            => ProductNameButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
     }
 }

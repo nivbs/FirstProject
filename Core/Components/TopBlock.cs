@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
+using System.Linq;
 
 namespace Infrastructure
 {
@@ -19,16 +20,16 @@ namespace Infrastructure
         }
 
         //change to itemPage
-        public BasePage ImageClick()
-            => ImageButton.Click<BasePage>();
+        public ProductPage ImageClick()
+            => ImageButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
 
         //change to bigItem
-        public ComponentBase QuickViewMobileClick()
-            => QuickViewMobileButton.Click<ComponentBase>();
+       // public ComponentBase QuickViewMobileClick()
+       //     => QuickViewMobileButton.Click<ComponentBase>();
 
         //change to BigItem
-        public ComponentBase QuickViewClick()
-            => QuickViewButton.Click<ComponentBase>();
+        //public ComponentBase QuickViewClick()
+        //    => QuickViewButton.Click<ComponentBase>();
 
     }
 }
