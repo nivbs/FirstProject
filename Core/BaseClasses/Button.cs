@@ -14,17 +14,14 @@ namespace Infrastructure
             
         }
 
-        public T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>(),
-             string cssSelectorFromDriver = "")
+        protected T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
              where T:DriverUser
         {
             ParentElement.Click();
-            //if (cssSelectorFromDriver != "")
-            //{
-            //    WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
-            //    wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-            //    wait.Until<bool>(ExpectedConditions.InvisibilityOfElementLocated(By.CssSelector(cssSelectorFromDriver)));
-            //}
+
+            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
+            //wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            //wait.Until(ExpectedConditions.ElementToBeClickable(ParentElement));
 
             if (keyValuePair.Value == null && keyValuePair.Key == null)
             {
@@ -34,6 +31,26 @@ namespace Infrastructure
             {
                 return (T)Activator.CreateInstance(typeof(T), Driver, keyValuePair.Key.FindElement(keyValuePair.Value));
             }
+        }
+
+        public T ClickUntilComponentChangeValue<T>(ComponentBase component, string attribute, string expectedValue, int seconds = 20
+            , KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
+             where T : DriverUser
+        {
+            T driverUser = Click<T>(keyValuePair);
+            component.WaitUntilAttributeEquals(attribute, expectedValue, seconds);
+
+            return driverUser;
+        }
+
+        public T ClickUntilElementExist<T>(string cssSelectorInDriver,
+            KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
+             where T : DriverUser
+        {
+            T driverUser = Click<T>(keyValuePair);
+            Driver.FindElement(cssSelectorInDriver);
+
+            return driverUser;
         }
 
         public string GetText()

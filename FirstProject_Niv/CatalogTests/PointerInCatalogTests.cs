@@ -9,6 +9,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions.Internal;
 using System.Drawing;
 using java.awt;
+using OpenQA.Selenium.Interactions;
+using FluentAssertions;
 
 namespace FirstProject_Niv
 {
@@ -18,7 +20,16 @@ namespace FirstProject_Niv
         [TestMethod]
         public void PointerOnProductSuccess()
         {
+            var point = WomenCatalogPage.Products.First().GetLocation();
+            Actions action = new Actions(Driver);
+            action.MoveByOffset(point.X, point.Y).Perform();
 
+            WomenCatalogPage.Products.First()
+                .BottomBlock
+                .ItemButtonsContainer
+                .IsDisplayed()
+                .Should()
+                .BeTrue();
         }
     }
 }

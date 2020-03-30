@@ -19,9 +19,11 @@ namespace Assertions
 
         public AndConstraint<ProductRow> TotalPriceIsTrue()
         {
+            double totalPrice = Subject.TotalPrice;
+            double totalPriceCalculate = (Subject.Quantity.GetQuantity() * Subject.UnitPrice);
             Execute
                 .Assertion
-                .ForCondition(Subject.TotalPrice == (2.0 * Subject.UnitPrice))
+                .ForCondition(totalPrice == totalPriceCalculate)
                 .FailWith("Total Price is not equal to the quantity multiple unit price");
 
             return new AndConstraint<ProductRow>(Subject);

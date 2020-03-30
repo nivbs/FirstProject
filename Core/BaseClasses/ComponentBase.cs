@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
@@ -23,6 +24,9 @@ namespace Infrastructure
         {
             return ParentElement.ToString();
         }
+
+        public bool IsEnabled()
+            => ParentElement.Enabled;
 
         public bool IsDisplayed()
             => ParentElement.Displayed;
@@ -49,5 +53,8 @@ namespace Infrastructure
 
             return null;
         }
+
+        public Point GetLocation()
+            => ParentElement.Location;
     }
 }

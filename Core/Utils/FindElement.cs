@@ -39,29 +39,20 @@ namespace Infrastructure.Utils
             KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
             where T : DriverUser
         {
-            string buttonToString = button.ToString();
-            T driverUser = button.Click<T>(keyValuePair);
             DefaultWait<Button> defaultWait = new DefaultWait<Button>(button);
             defaultWait.Timeout = TimeSpan.FromSeconds(20);
+            defaultWait.IgnoreExceptionTypes(typeof(StaleElementReferenceException),
+                typeof(NoSuchElementException), typeof(ElementNotInteractableException));
+            T driverUser = button.Click<T>(keyValuePair);
+            
             return defaultWait.Until<T>(myButton =>
             {
-                try
-                {
-                    if (myButton.ToString() != buttonToString)
-                    {
-                        return driverUser;
-                    }
-
-                    return null;
-                }
-                catch (StaleElementReferenceException)
+                if (myButton.IsEnabled())
                 {
                     return driverUser;
                 }
-                catch (NoSuchElementException)
-                {
-                    return driverUser;
-                }
+                
+                return null;
             });
         }
 

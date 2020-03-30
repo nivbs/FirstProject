@@ -8,6 +8,7 @@ using FluentAssertions;
 using Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assertions;
+using OpenQA.Selenium;
 
 namespace FirstProject_Niv
 {
@@ -40,8 +41,7 @@ namespace FirstProject_Niv
 
             CartPage
                 .GetFirstProductRow().Quantity
-                .QuantityTextBox
-                .FillNewValue("1.5");
+                .FillQuantity("1.5");
 
             CartPage
                 .GetFirstProductRow()
@@ -55,8 +55,7 @@ namespace FirstProject_Niv
         {
             CartPage
                 .GetFirstProductRow().Quantity
-                .QuantityTextBox
-                .FillNewValue("1.5");
+                .FillQuantity("1.5");
 
             CartPage
                 .GetFirstProductRow().Quantity
@@ -71,8 +70,7 @@ namespace FirstProject_Niv
         {
             CartPage
                 .GetFirstProductRow().Quantity
-                .QuantityTextBox
-                .FillNewValue("2.5");
+                .FillQuantity("2.5");
 
             CartPage
                 .GetFirstProductRow().Quantity
@@ -80,6 +78,18 @@ namespace FirstProject_Niv
                 .GetFirstProductRow()
                 .Should()
                 .TotalPriceIsTrue();
+        }
+
+        [TestMethod]
+        public void RemoveProductWhileOneProductInCartSuccess()
+        {
+            CartPage
+                .GetFirstProductRow()
+                .DeleteClick()
+                .CartTable
+                .ProductRows
+                .Should()
+                .BeNullOrEmpty();
         }
     }
 }

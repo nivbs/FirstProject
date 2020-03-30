@@ -18,13 +18,23 @@ namespace Infrastructure
         }
 
         public CatalogPage ContinueShoppingClickInCatalog()
-            => ContinueShoppingButton.Click<CatalogPage>();
+        //=> Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(ContinueShoppingButton);
+        //=> ContinueShoppingButton.Click<CatalogPage>();
+        {
+            var  ContinueShoppingButton.Click<CatalogPage>();
+        }
 
         public HomePage ContinueShoppingClickInHome()
             => ContinueShoppingButton.Click<HomePage>();
 
         public CartPage ProceedToCheckoutClick()
-            => (CartPage)Utils.FindElement.WaitUntilNotExist(ParentElement, ProceedToCheckoutButton.Click<CartPage>());
+        // => (CartPage)Utils.FindElement.WaitUntilNotExist(ParentElement, ProceedToCheckoutButton.Click<CartPage>());
+        {
+            var cartPage = ProceedToCheckoutButton.Click<CartPage>();
+            var cartTable = cartPage.CartTable;
+
+            return cartPage;
+        }
 
         public CatalogPage ExitClickInCatalog()
             => ExitButton.Click<CatalogPage>();

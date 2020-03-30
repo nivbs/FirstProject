@@ -7,7 +7,7 @@ namespace Infrastructure
 {
     public class Quantity : ComponentBase
     {
-        public TextBox QuantityTextBox => new TextBox(Driver, ParentElement.FindElement("input:nth-of-type(2)"));
+        private TextBox QuantityTextBox => new TextBox(Driver, ParentElement.FindElement("input:nth-of-type(2)"));
         private Button PlusButton => new Button(Driver, ParentElement.FindElement(".cart_quantity_up"));
         private Button MinusButton => new Button(Driver, ParentElement.FindElement(".cart_quantity_down"));
         
@@ -18,9 +18,29 @@ namespace Infrastructure
         }
 
         public CartPage PlusClick()
-            => PlusButton.Click<CartPage>(new KeyValuePair<ISearchContext, string>(), ".cart_quantity_up");
+        //=> Utils.FindElement.WaitUntilClickRefreshed<CartPage>(PlusButton);
+        {
+            int quantity = (int)GetQuantity();
+            var cartPage = PlusButton.Click<CartPage>();
+            QuantityTextBox.WaitUntilAttributeEquals("value", (quantity + 1).ToString());
+
+            return cartPage;
+        }
 
         public CartPage MinusClick()
-            => Utils.FindElement.WaitUntilClickChangeId<CartPage>(MinusButton);
+        //=> Utils.FindElement.WaitUntilClickChangeId<CartPage>(MinusButton);
+        {
+            int quantity = (int)GetQuantity();
+            var cartPage = MinusButton.Click<CartPage>();
+            QuantityTextBox.WaitUntilAttributeEquals("value", (quantity - 1).ToString());
+
+            return cartPage;
+        }
+
+        public void FillQuantity(string value)
+            => QuantityTextBox.FillNewValue(value);
+
+        public double GetQuantity()
+            => double.Parse(QuantityTextBox.GetValueByAttribute("value"));
     }
 }

@@ -36,8 +36,8 @@ namespace Infrastructure
         public CatalogPage FirstColorClick()
             => ColorButtons.First().Click<CatalogPage>();
         public CatalogPage ColorClick(string colorName)
-                    => ColorButtons.Where(colorButton => colorButton.GetText().Contains(colorName))
-                        .First().Click<CatalogPage>();
+                    => Utils.FindElement.WaitUntilClickRefreshed<CatalogPage>(ColorButtons
+                        .Where(colorButton => colorButton.GetText().Contains(colorName)).First());
         public CatalogPage CompositionClick(string compositionName)
             => CompositionButtons.Where(compositionButton => compositionButton.GetText().Contains(compositionName))
                 .First().Click<CatalogPage>();

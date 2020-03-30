@@ -1,12 +1,12 @@
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Assertions.deps.json
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Assertions.dll
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Assertions.pdb
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Infrastructure.dll
+C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Infrastructure.pdb
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.csprojAssemblyReference.cache
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.csproj.CoreCompileInputs.cache
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.AssemblyInfoInputs.cache
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.AssemblyInfo.cs
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Assertions.deps.json
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Assertions.dll
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Infrastructure.dll
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Infrastructure.pdb
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.csproj.CopyComplete
-C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\bin\Debug\netstandard2.0\Assertions.pdb
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.dll
 C:\Users\niv\Desktop\ניב\FirstProject_Niv\Assertions\obj\Debug\netstandard2.0\Assertions.pdb

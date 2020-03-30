@@ -28,16 +28,14 @@ namespace FirstProject_Niv
         }
 
         [TestMethod]
-        public void RemoveProductSuccess()
+        public void RemoveProductWhileTwoProductsInCartSuccess()
         {
             string productName = CartPage.GetFirstProductRow().ProductDescription.ProductNameButton.GetText();
             int countOfProducts = CartPage.CartTable.ProductRows.Count();
-
-            CartPage = CartPage
-                .GetFirstProductRow()
-                .DeleteClick();
-
+            
             CartPage
+                .GetFirstProductRow()
+                .DeleteClick()
                 .Should()
                 .ProductNotExistInCart(productName)
                 .And

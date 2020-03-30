@@ -21,16 +21,11 @@ namespace FirstProject_Niv
             WomenCatalogPage.Products.First()
                 .BottomBlock.ItemButtonsContainer
                 .AddToCartClick()
-                .ContinueShoppingClickInCatalog()
-                .Cart.Products.Any(product => product.ProductInfo.GetProductName() == firstProductName)
+                .ProceedToCheckoutClick()
+                .CartTable.ProductRows
+                .Any(product => product.ProductDescription.ProductNameButton.GetText() == firstProductName)
                 .Should()
                 .BeTrue();
-        }
-
-        [TestMethod]
-        public void TestGetXPath()
-        {
-            string xPath = WomenCatalogPage.Products.First().BottomBlock.GetMyXPath();
         }
 
         [TestMethod]

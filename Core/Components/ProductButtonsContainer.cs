@@ -8,7 +8,7 @@ namespace Infrastructure
     public class ProductButtonsContainer : ComponentBase
     {
         private Button AddToCartButton => new Button(Driver, ParentElement.FindElement(".ajax_add_to_cart_button"));
-        private Button MoreButton => new Button(Driver, ParentElement.FindElement(By.CssSelector(".lnk_view")));
+        private Button MoreButton => new Button(Driver, ParentElement.FindElement(".lnk_view"));
 
         public ProductButtonsContainer(IWebDriver driver, IWebElement parentElement)
             : base(driver, parentElement)
@@ -17,8 +17,14 @@ namespace Infrastructure
         }
 
         public ProductPane AddToCartClick()
-            => AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver,"#layer_cart"));
+        //=> Utils.FindElement.WaitUntilClickRefreshed<ProductPane>(AddToCartButton, new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
+        // => AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver,"#layer_cart"));
+        {
+            var productPane = AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
+            Driver.FindElement("#layer_cart");
 
+            return productPane;
+        }
         public ProductPage MoreClick()
             => MoreButton.Click<ProductPage>();
     }

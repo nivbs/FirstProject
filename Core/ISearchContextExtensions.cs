@@ -22,10 +22,10 @@ namespace Infrastructure
                 defaultWait.Timeout = TimeSpan.FromSeconds(seconds);
                 defaultWait.IgnoreExceptionTypes(typeof(ElementNotInteractableException),
                     typeof(StaleElementReferenceException), typeof(NoSuchElementException));
-                return defaultWait.Until<IWebElement>(sc =>
+                return defaultWait.Until(sc =>
                     {
                         var element = sc.FindElement(By.CssSelector(cssSelector));
-                        if(element.Enabled && element.Displayed)
+                        if(element.Enabled)
                         {
                             return element;
                         }
@@ -59,6 +59,26 @@ namespace Infrastructure
                         return null;
                     });
             }
+        }
+
+        public static T WaitUntilAttributeEquals<T>(this T componentBase, string attribute
+            , string expectedValue, int seconds = 20)
+             where T : ComponentBase
+        {
+            DefaultWait<T> defaultWait = new DefaultWait<T>(componentBase);
+            defaultWait.Timeout = TimeSpan.FromSeconds(seconds);
+            defaultWait.IgnoreExceptionTypes(typeof(ElementNotInteractableException),
+                typeof(StaleElementReferenceException));
+
+            return defaultWait.Until(component =>
+            {
+                if (component.GetValueByAttribute(attribute) == expectedValue)
+                {
+                    return component;
+                }
+
+                return null;
+            });
         }
     }
 }
