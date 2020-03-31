@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using Infrastructure.BaseClasses;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class Product : ComponentBase
     {

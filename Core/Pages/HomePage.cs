@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using OpenQA.Selenium;
 using System.Linq;
+using Infrastructure.BaseClasses;
+using Infrastructure.Components;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Pages
 {
     public class HomePage : BasePage
     {

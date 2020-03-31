@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using OpenQA.Selenium;
 
-namespace Infrastructure
+namespace Infrastructure.BaseClasses
 {
     public abstract class ComponentBase : DriverUser
     {
@@ -21,9 +17,7 @@ namespace Infrastructure
             => ParentElement.GetAttribute(property);
 
         public override string ToString()
-        {
-            return ParentElement.ToString();
-        }
+            => ParentElement.ToString();
 
         public bool IsEnabled()
             => ParentElement.Enabled;

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
+﻿using System.Linq;
 using OpenQA.Selenium;
+using Infrastructure.BaseClasses;
+using Infrastructure.Common;
+using Infrastructure.Pages;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class ColorButton : ComponentBase
     {

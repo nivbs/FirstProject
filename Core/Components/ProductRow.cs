@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
+using Infrastructure.BaseClasses;
+using Infrastructure.Common;
+using Infrastructure.Extensions;
+using Infrastructure.Pages;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class ProductRow : ComponentBase
     {

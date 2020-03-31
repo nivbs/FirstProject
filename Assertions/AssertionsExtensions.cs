@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using Infrastructure.Components;
+using Infrastructure.Pages;
 
 namespace Assertions
 {

@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using OpenQA.Selenium;
 using System.Linq;
+using Infrastructure.Extensions;
+using Infrastructure.BaseClasses;
+using Infrastructure.Common;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class ProductInfoInProductPage : ComponentBase
     {

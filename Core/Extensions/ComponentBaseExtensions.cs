@@ -1,10 +1,9 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using Infrastructure.BaseClasses;
 
-namespace Infrastructure
+namespace Infrastructure.Extensions
 {
     public static class ComponentBaseExtensions
     {

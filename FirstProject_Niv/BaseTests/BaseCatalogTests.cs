@@ -1,12 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Infrastructure;
+using Infrastructure.Pages;
 
-namespace FirstProject_Niv
+namespace Tests
 {
     [TestClass]
     public abstract class BaseCatalogTests : BaseUnitTest

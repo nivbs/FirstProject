@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System.Linq;
+using Infrastructure.BaseClasses;
+using Infrastructure.Common;
+using Infrastructure.Pages;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class TopProductBlock : ComponentBase
     {
@@ -19,17 +20,8 @@ namespace Infrastructure
 
         }
 
-        //change to itemPage
         public ProductPage ImageClick()
             => ImageButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
-
-        //change to bigItem
-       // public ComponentBase QuickViewMobileClick()
-       //     => QuickViewMobileButton.Click<ComponentBase>();
-
-        //change to BigItem
-        //public ComponentBase QuickViewClick()
-        //    => QuickViewButton.Click<ComponentBase>();
 
     }
 }

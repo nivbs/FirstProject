@@ -1,7 +1,11 @@
 ﻿using OpenQA.Selenium;
 using System.Linq;
+using Infrastructure.BaseClasses;
+using Infrastructure.Common;
+using Infrastructure.Pages;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class ViewedProductInfo : ComponentBase
     {

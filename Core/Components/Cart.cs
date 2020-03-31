@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using OpenQA.Selenium;
+using Infrastructure.BaseClasses;
+using Infrastructure.Common;
+using Infrastructure.Pages;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class Cart : ComponentBase
     {

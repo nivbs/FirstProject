@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Infrastructure.BaseClasses;
 using OpenQA.Selenium;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Common
 {
     public class TextBox : ComponentBase
     {

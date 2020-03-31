@@ -1,18 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Infrastructure;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions.Internal;
-using System.Drawing;
-using java.awt;
 using OpenQA.Selenium.Interactions;
 using FluentAssertions;
+using Infrastructure.Common;
 
-namespace FirstProject_Niv
+namespace Tests
 {
     [TestClass]
     public class PointerInCatalogTests : BaseCatalogTests

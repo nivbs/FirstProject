@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using OpenQA.Selenium;
+using Infrastructure.Pages;
+using Infrastructure.BaseClasses;
+using Infrastructure.Common;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class ProductButtonsContainer : ComponentBase
     {
@@ -18,15 +20,7 @@ namespace Infrastructure
         }
 
         public ProductPane AddToCartClick()
-        //=> Utils.FindElement.WaitUntilClickRefreshed<ProductPane>(AddToCartButton, new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
-        // => AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver,"#layer_cart"));
-        //{
-        //    var productPane = AddToCartButton.Click<ProductPane>(new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
-        //    Driver.FindElement("#layer_cart");
-
-        //    return productPane;
-        //}
-        => AddToCartButton.ClickUntilElementExist<ProductPane>(CssSelectorsInDriver.ProductPane, new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
+            => AddToCartButton.ClickUntilElementExist<ProductPane>(CssSelectorsInDriver.ProductPane, new KeyValuePair<ISearchContext, string>(Driver, "#layer_cart"));
         
         public ProductPage MoreClick()
             => MoreButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);

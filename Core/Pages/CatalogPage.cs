@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using OpenQA.Selenium;
+using Infrastructure.BaseClasses;
+using Infrastructure.Components;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Pages
 {
     public class CatalogPage : BasePage
     {

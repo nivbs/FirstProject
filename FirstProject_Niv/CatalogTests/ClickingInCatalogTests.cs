@@ -1,14 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Infrastructure;
-using OpenQA.Selenium;
-using System.Threading.Tasks;
 using FluentAssertions;
+using Infrastructure.Components;
 
-namespace FirstProject_Niv
+namespace Tests
 {
     [TestClass]
     public class ClickingInCatalogTests : BaseCatalogTests

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Extensions;
+﻿using Extensions;
 using FluentAssertions;
-using Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assertions;
-using OpenQA.Selenium;
+using Infrastructure.Components;
+using Infrastructure.Pages;
 
-namespace FirstProject_Niv
+namespace Tests
 {
     [TestClass]
     public class CartWithOneProductTests : BaseCartTest

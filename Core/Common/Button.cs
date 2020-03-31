@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using Infrastructure.BaseClasses;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Common
 {
     public class Button : ComponentBase
     {
@@ -20,9 +23,12 @@ namespace Infrastructure
         protected T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
              where T:DriverUser
         {
-            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
-            //wait.Until(ExpectedConditions.ElementToBeClickable(ParentElement));
-
+            DefaultWait<IWebElement> wait = new DefaultWait<IWebElement>(ParentElement);
+            wait.Timeout = TimeSpan.FromSeconds(15);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotInteractableException),
+                typeof(StaleElementReferenceException));
+            wait.Until(element => element.Enabled);
+            
             ParentElement.Click();
 
             if (string.IsNullOrEmpty(keyValuePair.Value) || keyValuePair.Key == null)

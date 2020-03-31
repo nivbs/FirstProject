@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
 using System.Linq;
+using Infrastructure.BaseClasses;
+using Infrastructure.Extensions;
 
-namespace Infrastructure
+namespace Infrastructure.Components
 {
     public class ViewedProducts : ComponentBase
     {

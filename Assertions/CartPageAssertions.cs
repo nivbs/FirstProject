@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FluentAssertions.Execution;
-using FluentAssertions.Primitives;
-using Infrastructure;
+﻿using FluentAssertions.Primitives;
+using Infrastructure.Pages;
 using FluentAssertions;
 using System.Linq;
 
