@@ -25,8 +25,7 @@ namespace Infrastructure
 
         public void FillNewValue(string value)
         {
-            Clear();
-            Fill(value);
+            ParentElement.ClearAndSendKeys(value);
         }
 
         public string GetText()

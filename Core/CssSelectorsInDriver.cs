@@ -14,7 +14,7 @@ namespace Infrastructure
         public static string FilterRow => "#left_column";
         public static string Product => ".product_list .ajax_block_product";
         public static string ProductButtons => ".button-container";
-        //public static string ProductDescription => $"{ProductRow} .cart_description";
+        public static string ProductDescription => $"{ProductRow} .cart_description";
         public static string ProductInCart => ".products dt";
         public static string ProductInfoInCart => ".cart-info";
         public static string ProductInfoInProductPage => "#center_column .primary_block";

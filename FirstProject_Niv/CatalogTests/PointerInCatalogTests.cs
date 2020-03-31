@@ -27,14 +27,15 @@ namespace FirstProject_Niv
 
             var point = WomenCatalogPage.Products.First().GetLocation();
             Actions action = new Actions(Driver);
-            //action.MoveByOffset(point.X, point.Y).Build().Perform();
-            action.MoveToElement(Driver.FindElement(By.CssSelector(CssSelectorsInDriver.Product)), 5,5).Perform();
+            action.MoveToElement(Driver.FindElement(By.CssSelector(CssSelectorsInDriver.TopBlock))).Perform();
             WomenCatalogPage.Products.First()
                 .BottomBlock
                 .ItemButtonsContainer
                 .IsDisplayed()
                 .Should()
                 .BeTrue();
+            
+            string answer = isDisplayed.ToString();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace FirstProject_Niv
         {
             base.Initialize();
 
-            ProductPane = AddToCartFromHome.FirstProduct(HomePage);
+            ProductPane = HomePage.AddToCartProductByIndex(0);
         }
     }
 }

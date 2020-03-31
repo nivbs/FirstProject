@@ -18,27 +18,11 @@ namespace Infrastructure
         }
 
         public CartPage PlusClick()
-        //=> Utils.FindElement.WaitUntilClickRefreshed<CartPage>(PlusButton);
-        //{
-        //    int quantity = (int)GetQuantity();
-        //    var cartPage = PlusButton.Click<CartPage>();
-        //    QuantityTextBox.WaitUntilAttributeEquals("value", (quantity + 1).ToString());
-
-        //    return cartPage;
-        //}
             => PlusButton.ClickUntilComponentChangeValue<CartPage>(QuantityTextBox, "value", (((int)GetQuantity()) + 1).ToString());
 
 
         public CartPage MinusClick()
-        //=> Utils.FindElement.WaitUntilClickChangeId<CartPage>(MinusButton);
-        //{
-        //    int quantity = (int)GetQuantity();
-        //    var cartPage = MinusButton.Click<CartPage>();
-        //    QuantityTextBox.WaitUntilAttributeEquals("value", (quantity - 1).ToString());
-
-        //    return cartPage;
-        //}
-        => PlusButton.ClickUntilComponentChangeValue<CartPage>(QuantityTextBox, "value", (((int)GetQuantity()) - 1).ToString());
+            => PlusButton.ClickUntilComponentChangeValue<CartPage>(QuantityTextBox, "value", (((int)GetQuantity()) - 1).ToString());
 
         public void FillQuantity(string value)
             => QuantityTextBox.FillNewValue(value);

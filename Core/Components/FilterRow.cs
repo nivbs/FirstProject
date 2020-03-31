@@ -26,35 +26,35 @@ namespace Infrastructure
         }
 
         public CatalogPage CategoryClick(string categoryName)
-            => CategoryButtons.Where(categoryButton => categoryButton.GetText().Contains(categoryName))
+            => CategoryButtons.Where(categoryButton => categoryButton.Text.Contains(categoryName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage SizeClick(string sizeName)
-            => SizeButtons.Where(sizeButton => sizeButton.GetText().Contains(sizeName))
+            => SizeButtons.Where(sizeButton => sizeButton.Text.Contains(sizeName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public IEnumerable<string> ColorStyles()
             => ColorButtons.Select(colorButton => colorButton.GetValueByAttribute("style"));
         public CatalogPage FirstColorClick()
             => ColorButtons.First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage ColorClick(string colorName)
-                    => ColorButtons.Where(colorButton => colorButton.GetText().Contains(colorName)).First()
+                    => ColorButtons.Where(colorButton => colorButton.Text.Contains(colorName)).First()
                         .ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage CompositionClick(string compositionName)
-            => CompositionButtons.Where(compositionButton => compositionButton.GetText().Contains(compositionName))
+            => CompositionButtons.Where(compositionButton => compositionButton.Text.Contains(compositionName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage StyleClick(string styleName)
-            => StyleButtons.Where(styleButton => styleButton.GetText().Contains(styleName))
+            => StyleButtons.Where(styleButton => styleButton.Text.Contains(styleName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage PropertyClick(string propertyName)
-            => PropertyButtons.Where(propertyButton => propertyButton.GetText().Contains(propertyName))
+            => PropertyButtons.Where(propertyButton => propertyButton.Text.Contains(propertyName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage AvailabiltyClick(string availabiltyName)
-            => AvailabiltyButtons.Where(availabiltyButton => availabiltyButton.GetText().Contains(availabiltyName))
+            => AvailabiltyButtons.Where(availabiltyButton => availabiltyButton.Text.Contains(availabiltyName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage ManufacturerClick(string manufacturerName)
-            => ManufacturerButtons.Where(manufacturerButton => manufacturerButton.GetText().Contains(manufacturerName))
+            => ManufacturerButtons.Where(manufacturerButton => manufacturerButton.Text.Contains(manufacturerName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
         public CatalogPage ConditionClick(string conditionName)
-            => ConditionButtons.Where(conditionButton => conditionButton.GetText().Contains(conditionName))
+            => ConditionButtons.Where(conditionButton => conditionButton.Text.Contains(conditionName))
                 .First().ClickUntilElementExist<CatalogPage>(CssSelectorsInDriver.CatalogPage.First().Value);
     }
 }

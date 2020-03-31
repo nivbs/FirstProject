@@ -61,24 +61,24 @@ namespace Infrastructure
             }
         }
 
-        public static T WaitUntilAttributeEquals<T>(this T componentBase, string attribute
-            , string expectedValue, int seconds = 20)
-             where T : ComponentBase
-        {
-            DefaultWait<T> defaultWait = new DefaultWait<T>(componentBase);
-            defaultWait.Timeout = TimeSpan.FromSeconds(seconds);
-            defaultWait.IgnoreExceptionTypes(typeof(ElementNotInteractableException),
-                typeof(StaleElementReferenceException));
+        //public static T WaitUntilAttributeEquals<T>(this T componentBase, string attribute
+        //    , string expectedValue, int seconds = 20)
+        //     where T : ComponentBase
+        //{
+        //    DefaultWait<T> defaultWait = new DefaultWait<T>(componentBase);
+        //    defaultWait.Timeout = TimeSpan.FromSeconds(seconds);
+        //    defaultWait.IgnoreExceptionTypes(typeof(ElementNotInteractableException),
+        //        typeof(StaleElementReferenceException));
 
-            return defaultWait.Until(component =>
-            {
-                if (component.GetValueByAttribute(attribute) == expectedValue)
-                {
-                    return component;
-                }
+        //    return defaultWait.Until(component =>
+        //    {
+        //        if (component.GetValueByAttribute(attribute) == expectedValue)
+        //        {
+        //            return component;
+        //        }
 
-                return null;
-            });
-        }
+        //        return null;
+        //    });
+        //}
     }
 }

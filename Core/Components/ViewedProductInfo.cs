@@ -22,6 +22,6 @@ namespace Infrastructure
             => ProductNameButton.ClickUntilElementExist<ProductPage>(CssSelectorsInDriver.ProductPage.First().Value);
 
         public string GetProductName()
-            => ProductNameButton.GetText();
+            => ProductNameButton.Text;
     }
 }

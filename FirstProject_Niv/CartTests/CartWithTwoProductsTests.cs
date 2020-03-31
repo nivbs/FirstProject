@@ -22,15 +22,14 @@ namespace FirstProject_Niv
             base.Initialize();
 
             HomePage = ProductPane.ContinueShoppingClickInHome();
-            CartPage = AddToCartFromHome
-                        .LastProduct(HomePage)
+            CartPage = HomePage.AddToCartProductByIndex(HomePage.Products.Count()-1)
                         .ProceedToCheckoutClick();
         }
 
         [TestMethod]
         public void RemoveProductWhileTwoProductsInCartSuccess()
         {
-            string productName = CartPage.GetFirstProductRow().ProductDescription.ProductNameButton.GetText();
+            string productName = CartPage.GetFirstProductRow().ProductDescription.ProductNameButton.Text;
             int countOfProducts = CartPage.CartTable.ProductRows.Count();
             
             CartPage

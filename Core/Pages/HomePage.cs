@@ -16,5 +16,17 @@ namespace Infrastructure
         {
 
         }
+
+        public ProductPane AddToCartProductByIndex(int index)
+        {
+            if (index >= 0 && index < Products.Count())
+            {
+                return Products.ToList()[index]
+                      .BottomBlock.ItemButtonsContainer
+                      .AddToCartClick();
+            }
+
+            return AddToCartProductByIndex(0);
+        }
     }
 }

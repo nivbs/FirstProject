@@ -8,6 +8,9 @@ namespace Infrastructure
 {
     public class Button : ComponentBase
     {
+        public string Text => ParentElement.Text;
+        public string Link => GetValueByAttribute("href");
+
         public Button(IWebDriver driver, IWebElement parentElement)
             : base(driver, parentElement)
         {
@@ -17,13 +20,12 @@ namespace Infrastructure
         protected T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
              where T:DriverUser
         {
-            ParentElement.Click();
-
-            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
-            //wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
             //wait.Until(ExpectedConditions.ElementToBeClickable(ParentElement));
 
-            if (keyValuePair.Value == null && keyValuePair.Key == null)
+            ParentElement.Click();
+
+            if (string.IsNullOrEmpty(keyValuePair.Value) || keyValuePair.Key == null)
             {
                 return (T)Activator.CreateInstance(typeof(T), Driver);
             }
@@ -53,7 +55,8 @@ namespace Infrastructure
             return driverUser;
         }
 
-        public T ClickUntilElementIsNotExist<T>(ComponentBase component, KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
+        public T ClickUntilElementIsNotExist<T>(ComponentBase component, 
+            KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
              where T : DriverUser
         {
             T driverUser = Click<T>(keyValuePair);
@@ -71,21 +74,16 @@ namespace Infrastructure
 
                     return driverUser;
                 }
-                catch (StaleElementReferenceException)
+                catch (Exception ex)
                 {
-                    return driverUser;
-                }
-                catch (NoSuchElementException)
-                {
-                    return driverUser;
+                    if (ex is StaleElementReferenceException || ex is NoSuchElementException || ex is ElementNotInteractableException)
+                    {
+                        return driverUser;
+                    }
+
+                    throw;
                 }
             });
         }
-
-        public string GetText()
-            => ParentElement.Text;
-
-        public string GetLink()
-            => GetValueByAttribute("href");
     }
 }
