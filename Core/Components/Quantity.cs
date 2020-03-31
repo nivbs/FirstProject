@@ -23,7 +23,14 @@ namespace Infrastructure.Components
 
 
         public CartPage MinusClick()
-            => PlusButton.ClickUntilComponentChangeValue<CartPage>(QuantityTextBox, "value", (((int)GetQuantity()) - 1).ToString());
+        {
+            if (GetQuantity() > (int)GetQuantity())
+            {
+                return PlusButton.ClickUntilComponentChangeValue<CartPage>(QuantityTextBox, "value", GetQuantity().ToString());
+            }
+
+            return PlusButton.ClickUntilComponentChangeValue<CartPage>(QuantityTextBox, "value", ((int)GetQuantity() - 1).ToString());
+        }
 
         public void FillQuantity(string value)
             => QuantityTextBox.FillNewValue(value);

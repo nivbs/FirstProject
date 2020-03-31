@@ -10,6 +10,13 @@ namespace Tests
     [TestClass]
     public class PointerInCatalogTests : BaseCatalogTests
     {
+        [TestInitialize]
+        public override void Initialize()
+        {
+            base.Initialize();
+            Driver.Manage().Window.Maximize();
+        }
+
         [TestMethod]
         public void PointerOnProductSuccess()
         {

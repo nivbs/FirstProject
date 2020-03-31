@@ -23,12 +23,17 @@ namespace Infrastructure.Common
         protected T Click<T>(KeyValuePair<ISearchContext, string> keyValuePair = new KeyValuePair<ISearchContext, string>())
              where T:DriverUser
         {
-            DefaultWait<IWebElement> wait = new DefaultWait<IWebElement>(ParentElement);
-            wait.Timeout = TimeSpan.FromSeconds(15);
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotInteractableException),
-                typeof(StaleElementReferenceException));
-            wait.Until(element => element.Enabled);
-            
+            //DefaultWait<IWebElement> wait = new DefaultWait<IWebElement>(ParentElement);
+            //wait.Timeout = TimeSpan.FromSeconds(15);
+            //wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotInteractableException),
+            //    typeof(StaleElementReferenceException));
+            //wait.Until(element => element.Enabled);
+
+            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+            //wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotInteractableException),
+            //    typeof(StaleElementReferenceException));
+            //wait.Until(ExpectedConditions.)
+
             ParentElement.Click();
 
             if (string.IsNullOrEmpty(keyValuePair.Value) || keyValuePair.Key == null)

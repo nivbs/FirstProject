@@ -17,7 +17,6 @@ namespace Tests
             Driver = new ChromeDriver(@"C:\Users\niv\Desktop");
             Driver.Navigate().GoToUrl(@"http://automationpractice.com/index.php");
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-            Driver.Manage().Window.Maximize();
 
             HomePage = new HomePage(Driver);
         }
